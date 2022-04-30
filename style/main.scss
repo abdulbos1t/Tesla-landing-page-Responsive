@@ -1,0 +1,257 @@
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/montserrat-v24-latin-regular.eot'); 
+    src: local(''),
+         url('../fonts/montserrat-v24-latin-regular.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/montserrat-v24-latin-regular.woff2') format('woff2'), 
+         url('../fonts/montserrat-v24-latin-regular.woff') format('woff'), 
+         url('../fonts/montserrat-v24-latin-regular.ttf') format('truetype'), 
+         url('../fonts/montserrat-v24-latin-regular.svg#Montserrat') format('svg'); 
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/montserrat-v24-latin-500.eot'); 
+    src: local(''),
+         url('../fonts/montserrat-v24-latin-500.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/montserrat-v24-latin-500.woff2') format('woff2'), 
+         url('../fonts/montserrat-v24-latin-500.woff') format('woff'), 
+         url('../fonts/montserrat-v24-latin-500.ttf') format('truetype'), 
+         url('../fonts/montserrat-v24-latin-500.svg#Montserrat') format('svg'); 
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/montserrat-v24-latin-600.eot'); 
+    src: local(''),
+         url('../fonts/montserrat-v24-latin-600.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/montserrat-v24-latin-600.woff2') format('woff2'), 
+         url('../fonts/montserrat-v24-latin-600.woff') format('woff'), 
+         url('../fonts/montserrat-v24-latin-600.ttf') format('truetype'), 
+         url('../fonts/montserrat-v24-latin-600.svg#Montserrat') format('svg'); 
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/montserrat-v24-latin-700.eot'); 
+    src: local(''),
+         url('../fonts/montserrat-v24-latin-700.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/montserrat-v24-latin-700.woff2') format('woff2'), 
+         url('../fonts/montserrat-v24-latin-700.woff') format('woff'), 
+         url('../fonts/montserrat-v24-latin-700.ttf') format('truetype'), 
+         url('../fonts/montserrat-v24-latin-700.svg#Montserrat') format('svg'); 
+  }
+
+
+    $white-bg: #fff; 
+    $hover-color: #E51937;
+    $title-color: #000;
+    $text-color: #fff;
+
+    @mixin title {
+        font-weight: 600;
+        color: $text-color;
+        font-size: 3rem;
+        line-height: 3.657rem;
+    }
+    @mixin text {
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: $text-color;
+        line-height: 1.829rem ;
+    }
+    @mixin btn {
+         font-weight: 700;
+         font-size: 1.3rem;
+         line-height: 1.585rem; 
+         color: $text-color;
+         border: 0.2rem solid $text-color;
+    }
+
+
+/* GLOBAL STYLES */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* *:focus {
+    outline: var(--brand-green-color) 1px dashed;
+    outline-offset: 3px;
+} */
+
+html{
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $white-bg;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.829rem;
+    color: $title-color;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container{
+    max-width: 140rem;
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+
+/* HEADER SECTION STYLES */
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.4rem;
+    margin-bottom: 5.8rem;
+    .logo{
+        display: block;
+        svg{
+            width: 16.6rem;
+            height: 5.1rem;
+        }
+    }
+    .nav-list, .nav-right{
+        display: flex;
+        align-items: center;
+        list-style: none;
+        .nav-list-item{
+            color: $title-color;
+            text-decoration: none;
+            margin-right: 4rem;
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 19px;
+                transform: translateX(-50%) scaleX(0);
+                transform-origin: 50% 50%;
+                width: 100%;
+                height: 2.5px;
+                background-color: $hover-color;
+                transition: transform 0.40s;
+            }
+            &:hover{
+                color: $hover-color;
+                opacity: 0.8;
+                &::after{
+                opacity: 0.8;
+                transform: translateX(-50%) scaleX(1);
+            }
+        }
+        &:active{
+            opacity: 0.6;
+        }
+        }
+        .nav-list-item2{
+            font-size: 1.5rem;
+            color: $title-color;
+            text-decoration: none;
+            margin-right: 3rem;
+            &:hover{
+                color: $hover-color;
+            }
+        }
+    }
+}
+
+/* HERO SECTION STYLES */
+.hero-wrapper{
+    text-align: center;
+    background-image: url(../img/Tesla-logo+car.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 59.4rem;
+    margin-bottom: 2rem;
+    
+    .hero-title{
+        font-size: 9rem;
+        line-height: 10.971rem;
+        color: $title-color;
+    }
+    .hero-text{
+        font-weight: 500;
+    }
+}
+.hero-item{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -10rem;
+    .hero-item-list{
+        display: flex;
+        margin-left: 10rem;
+        align-items: center;
+        .hero-item-img{
+            margin-right: 1.3rem;
+        }
+        .last-img{
+            margin-right: 0.7rem ;
+        }
+        .hero-item-title{
+            font-size: 3.5rem;
+            line-height: 4.267rem;
+            color: $title-color ;
+            .hit2{
+                font-size: 2rem;
+                line-height: 2.438rem;
+            }
+        }
+        .hero-item-text{
+            font-size: 1.2rem;
+            line-height: 1.463rem;
+            color: $title-color;
+        }
+        .hero-item-title2{
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+    }
+}
+.hero-item-btn{
+    margin-left: 4rem;
+    border: 2px solid #E51937;
+    padding: 0.8rem 3.3rem;
+    .hero-item-btn-link{
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: $hover-color;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+}
+.vector-img{
+    display: flex;
+    align-items: center;
+    margin: 3.7rem auto;
+    width: 2.8rem;
+    height: 1.4rem;
+}
